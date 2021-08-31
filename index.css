@@ -45,3 +45,7 @@ body .blog-footer a[href^="#"]{
 body footer {
     background-color: green;
 }
+
+.p-4 .list-unstyled ol:last-of-type{
+    background-color: pink;
+} 

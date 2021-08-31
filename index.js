@@ -14,13 +14,36 @@
 
 
 function addLinkToNav(){
-    let link = document.getElementById('navbar')
+    let link = document.querySelector('.nav-scroller.py-1.mb-2')
     let linkNode = document.createElement('a')
     linkNode.innerText = 'Vibrant'
     linkNode.className = 'p-2 text-muted'
     link.appendChild(linkNode)
 }
 
+function changeMainTitle(){
+    let h1 = document.querySelector(".display-4.font-italic")
+    h1.style.color = 'blue'
+}
+
+function changeJumbotronBg(){
+    let jumbotron = document.querySelector('.jumbotron')
+    jumbotron.style.background = 'blue'
+}
+
+function removeAllLinks(){
+    let links = document.querySelector('.list-unstyled')
+}
+
+function changeJumbotronH1(){
+    
+}
+
+
+
+
 window.onload = function(){
     addLinkToNav()
+    changeMainTitle()
+    // changeJumbotronBg()
 }
