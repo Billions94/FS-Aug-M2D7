@@ -49,3 +49,7 @@ body footer {
 .p-4 .list-unstyled ol:last-of-type{
     background-color: pink;
 } 
+
+aside div:last-child ol>li>a{
+    color:goldenrod;
+}

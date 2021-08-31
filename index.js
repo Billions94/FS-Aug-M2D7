@@ -28,14 +28,24 @@ function changeMainTitle(){
 
 function changeJumbotronBg(){
     let jumbotron = document.querySelector('.jumbotron')
-    jumbotron.style.background = 'blue'
+    jumbotron.classList.remove('bg-dark')
+    jumbotron.style.backgroundColor = 'purple'
 }
 
-function removeAllLinks(){
-    let links = document.querySelector('.list-unstyled')
+function removeLinksElsewhere() {
+        let links = document.querySelectorAll('aside div:last-child ol>li>a')
+        for (let i of links) {
+            i.remove()
+        }
 }
 
 function changeJumbotronH1(){
+    let h1Jb = document.querySelector('.jumbotron .col-md-6.px-0 .display-4.font-italic')
+    h1Jb.classList.remove('col-md-6')
+    h1Jb.classList.add('col-md-10')
+}
+
+function removeSearchIcon(){
     
 }
 
@@ -45,5 +55,7 @@ function changeJumbotronH1(){
 window.onload = function(){
     addLinkToNav()
     changeMainTitle()
-    // changeJumbotronBg()
+    changeJumbotronBg()
+    changeJumbotronH1()
+    removeLinksElsewhere()
 }
