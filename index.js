@@ -50,14 +50,12 @@ function removeSearchIcon(){
     searchIcon.remove('svg')
 }
 // Ex 17
-// function trim50Char(){
-//     let trim = document.querySelectorAll('main.container .blog-post p:nth-of-type(2)')
-//        for (let i = 0; i < trim.length; i++) {
-//             let result = trim[i].subStr(0, trim.length - 10)
-//            trim[i].innerText = result
-           
-//        }
-// }
+function trim50Char(){
+    let trim = document.querySelectorAll('main.container .blog-post p:nth-of-type(2)')
+     for (let i of trim) {
+         i.innerText = i.innerText.slice(50)
+     }    
+}
 // Ex 18 
 // function addNewBlogPost(){
 //     let blog = document.createElement('div')
@@ -65,7 +63,7 @@ function removeSearchIcon(){
 //     blog.classList.add('blog-post')
 //     document.getElementsByTagName('main')[0].appendChild(blog)
 // }
-
+// EX 18
 function addNewBlogPost(){
     const parentElement = document.querySelector(".blog-main");
     const nextSibling = document.querySelector(".blog-pagination");
@@ -85,6 +83,22 @@ function removeDisabled(){
     let btn = document.querySelector('.btn.btn-outline-secondary.disabled')
     btn.classList.remove('disabled')
 }
+// EX 19
+function removeOldPost(){
+    let post = document.querySelector('main.container div:nth-child(4)')
+    post.innerText = ''
+}
+
+// EX 20
+function authorAlert(){
+ let authors = document.querySelectorAll('.blog-post p.blog-post-meta  a')
+     for (let i of authors) {
+         i.addEventListener('mouseover', (e) =>{
+             alert(e.target.innerText)
+         })
+     }
+
+}
 
 window.onload = function(){
     addLinkToNav()
@@ -93,7 +107,8 @@ window.onload = function(){
     changeJumbotronH1()
     removeLinksElsewhere()
     removeSearchIcon()
-    // trim50Char()
+    trim50Char()
     // addNewBlogPost()
     removeDisabled()
+    authorAlert()
 }  
